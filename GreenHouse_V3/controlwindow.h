@@ -15,6 +15,7 @@ public:
     explicit ControlWindow(QWidget *parent = 0);
     ~ControlWindow();
     GPIO *Heater, *Watering, *Lightning, *Faning ;
+    bool Mode = false; // false = Manual | true = Automatic
 
 private slots:
     void openMainWindow();
@@ -22,9 +23,13 @@ private slots:
     void wateringButtonSlot();
     void heatingButtonSlot();
     void lightningButtonSlot();
+    void receiveMode(bool);
 
 private:
     Ui::ControlWindow *ui;
+
+signals :
+    void sendMode(bool);
 };
 
 #endif // CONTROLWINDOW_H

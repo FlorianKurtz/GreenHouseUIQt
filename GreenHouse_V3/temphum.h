@@ -8,7 +8,7 @@
 #include <QDebug>
 #include <unistd.h>
 
-class TempHum :public QThread
+class TempHum :public QObject
 {
     Q_OBJECT
 public:
@@ -21,8 +21,7 @@ public:
     QString *Humidity ;
 
     void getInfos();
-    int exec();
-    void run();
+    void doWork();
 
 signals :
     void updateInfo(QString*,QString*);

@@ -4,8 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
-
+QT       += core gui printsupport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = GreenHouse_V3
@@ -32,7 +31,13 @@ SOURCES += \
     temphum.cpp \
     camera.cpp \
     controlwindow.cpp \
-    infowindow.cpp
+    infowindow.cpp \
+    plantwindow.cpp \
+    automatictemperature.cpp \
+    automaticwatering.cpp \
+    automaticlightning.cpp \
+    qcustomplot.cpp \
+    tsl2591.cpp
 
 HEADERS += \
     mainwindow.h \
@@ -40,9 +45,18 @@ HEADERS += \
     temphum.h \
     camera.h \
     controlwindow.h \
-    infowindow.h
+    infowindow.h \
+    plantwindow.h \
+    automatictemperature.h \
+    automaticwatering.h \
+    automaticlightning.h \
+    qcustomplot.h \
+    tsl2591.h
 
 FORMS += \
     mainwindow.ui \
     controlwindow.ui \
-    infowindow.ui
+    infowindow.ui \
+    plantwindow.ui
+
+DISTFILES +=

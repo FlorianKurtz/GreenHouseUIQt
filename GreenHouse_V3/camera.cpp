@@ -2,13 +2,14 @@
 
 Camera::Camera()
 {
+    qDebug("Camera created");
     this->pictureRepositoryPath = "/home/pi/Pictures/GreenHouse_Pictures/%d" ;
 }
 
 void Camera::takePicture()
 {
     // Command terminal : raspistill -o ~/Camera/image.jpg -q 100
-    QProcess::execute("raspistill -o " + this->pictureRepositoryPath + " -q 100 -dt -w 200 -h 200");
+    QProcess::execute("raspistill -o " + this->pictureRepositoryPath + " -q 100 -dt -w 200 -h 200 -f");
     qDebug("Taking picture");
 }
 

@@ -4,6 +4,7 @@
 #include <QString>
 #include <QDebug>
 #include <QFile>
+#include <QDir>
 
 namespace Ui {
 class GPIO;

@@ -21,21 +21,36 @@ void GPIO::setPort(int port)
     pathDirectionString.append("/direction");
     this->pathValueString.append("/value");
 
-
     // GPIO initialization
     FILE *sysInitHandle = NULL;
-    if ((sysInitHandle = fopen("/sys/class/gpio/export","w")) != NULL )
+    if (!QFile::exists(this->pathValueString))
     {
-        fwrite(QString::number(port).toStdString().c_str(),sizeof(char),2,sysInitHandle);
-        fclose(sysInitHandle);
-        qDebug("GPIO %d added to export",this->portNumber);
+        if ((sysInitHandle = fopen("/sys/class/gpio/export","w")) != NULL )
+        {
+            fwrite(QString::number(port).toStdString().c_str(),sizeof(char),2,sysInitHandle);
+            fclose(sysInitHandle);
+            qDebug("GPIO %d added to export",this->portNumber);
+        }
     }
-    if ((sysInitHandle = fopen(pathDirectionString.toStdString().c_str(),"w")) != NULL )
+    QFile f(pathDirectionString);
+    if (f.open(QIODevice::ReadOnly))
     {
-        fwrite("out",sizeof(char),4,sysInitHandle);
-        fclose(sysInitHandle);
-        qDebug("GPIO %d direction put to out",this->portNumber);
+        QTextStream in(&f);
+        QString line = in.readLine();
+        if(line == "in")
+        {
+            qDebug("GPIO %d direction  : %s",this->portNumber,line.toStdString().c_str());
+            f.close();
+
+            if ((sysInitHandle = fopen(pathDirectionString.toStdString().c_str(),"w")) != NULL )
+            {
+                fwrite("out",sizeof(char),4,sysInitHandle);
+                fclose(sysInitHandle);
+                qDebug("GPIO %d direction put to out",this->portNumber);
+            }
+        }
     }
+
 }
 void GPIO::enablePort()
 {
@@ -67,7 +82,7 @@ int GPIO::getPortState()
     {
       outputValue = f.readAll().at(0) - 48;
       f.close();
-      qDebug("GPIO %d value = %d",this->portNumber,outputValue);
+      //qDebug("GPIO %d value = %d",this->portNumber,outputValue);
     }
     return outputValue ;
 }

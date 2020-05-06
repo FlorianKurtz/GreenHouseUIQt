@@ -44,17 +44,12 @@ void TempHum::getInfos()
     }
 }
 
-void TempHum::run()
-{
-    exec();
-}
-int TempHum::exec()
+void TempHum::doWork()
 {
     while(1)
     {
         this->getInfos();
         // Waiting 3seconds
-        sleep(3);
+        sleep(10);
     }
-    return 0 ;
 }

@@ -22,6 +22,14 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Purisa</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -38,6 +46,14 @@
      <height>41</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Purisa</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -53,6 +69,14 @@
      <width>291</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Purisa</family>
+     <pointsize>16</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
    </property>
    <property name="text">
     <string/>
@@ -123,6 +147,14 @@
      <height>91</height>
     </rect>
    </property>
+   <property name="font">
+    <font>
+     <family>Purisa</family>
+     <pointsize>14</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -143,7 +175,65 @@
     <string/>
    </property>
    <property name="pixmap">
-    <pixmap>../../../Images/GreenHouse_UI_Design/Background/info-page.jpg</pixmap>
+    <pixmap>../../../../Images/GreenHouse_UI_Design/Background/info-page-text.jpg</pixmap>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="resetGifButton">
+   <property name="geometry">
+    <rect>
+     <x>754</x>
+     <y>130</y>
+     <width>31</width>
+     <height>201</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border :none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="displayModeButton">
+   <property name="geometry">
+    <rect>
+     <x>578</x>
+     <y>21</y>
+     <width>111</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border :none;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCustomPlot" name="customPlot" native="true">
+   <property name="geometry">
+    <rect>
+     <x>112</x>
+     <y>16</y>
+     <width>361</width>
+     <height>451</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="takePictureButton">
+   <property name="geometry">
+    <rect>
+     <x>584</x>
+     <y>377</y>
+     <width>91</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border :none;</string>
+   </property>
+   <property name="text">
+    <string/>
    </property>
   </widget>
   <zorder>backgroundLabel</zorder>
@@ -153,7 +243,19 @@
   <zorder>plantGIFLabel</zorder>
   <zorder>gotoMainPageButton</zorder>
   <zorder>dateLabel</zorder>
+  <zorder>resetGifButton</zorder>
+  <zorder>displayModeButton</zorder>
+  <zorder>customPlot</zorder>
+  <zorder>takePictureButton</zorder>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

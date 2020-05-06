@@ -27,7 +27,7 @@
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap>../../../Images/GreenHouse_UI_Design/GIFs/ensoleille_humide_froid_vent.gif</pixmap>
+     <pixmap>../../../../Images/GreenHouse_UI_Design/GIFs/ensoleille_sec_chaud_pas_de_vent.gif</pixmap>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -93,6 +93,22 @@
     </property>
     <property name="flat">
      <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="gotoPlantPageButton">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>180</y>
+      <width>221</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none ;</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
